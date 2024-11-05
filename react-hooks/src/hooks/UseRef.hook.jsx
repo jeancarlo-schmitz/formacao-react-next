@@ -4,15 +4,21 @@ function UseRef() {
 
     function Counter(){
         const [contador, setContador] = useState(0);
-        const botao = useRef();
+        const contadorRef = useRef(0);
 
         useEffect(() => {
-          
-        });
+          setInterval(() => {
+            console.log(contadorRef.current)
+          }, 2000);
+        }, []);
+
+        useEffect(() => {
+          contadorRef.current = contador;
+        }, [contador]);
 
         return (
           <>
-            <button ref={botao} onClick={() => setContador(contador + 1)}> Contador: {contador}</button>
+            <button onClick={() => setContador(contador + 1)}> Contador: {contador}</button>
           </>
         )
     }

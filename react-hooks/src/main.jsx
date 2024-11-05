@@ -4,11 +4,13 @@ import './index.css'
 import UseState from './hooks/UseState.hook'
 import UseEffect from './hooks/UseEffect.hook'
 import UseRef from './hooks/UseRef.hook'
+import UseContext from './hooks/UseContext.hook'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <UseState />
+    {/* <UseState />
     <UseEffect />
-    <UseRef />
+    <UseRef /> */}
+    <UseContext />
   </StrictMode>,
 )
